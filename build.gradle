@@ -1,5 +1,5 @@
 plugins {
-    id "fabric-loom" version "0.8-SNAPSHOT"
+    id 'fabric-loom' version '0.9-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,6 +11,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+    maven {
+	url = "https://maven.terraformersmc.com/releases"
+    }
     maven { url "https://maven.shedaniel.me/" }
 }
 
@@ -36,7 +39,7 @@ dependencies {
 	//include fabricApi.module("fabric-resource-loader-v0", project.fabric_version)
 	
 	// ModMenu API, to add the Config Screen to it
-	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
